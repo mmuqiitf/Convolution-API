@@ -55,6 +55,7 @@ def high_pass(request):
     img_bs64 = decode_base64(request.data['image'].encode("utf-8"))
     im_arr = np.fromstring(img_bs64, dtype=np.uint8)
     img = cv2.imdecode(np.array(im_arr), cv2.IMREAD_UNCHANGED)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     if(request.data['type'] == "Kernel 1"):
         kernel = np.array([[-1, -1, -1], [-1, 8, -1], [-1, -1, -1]])
