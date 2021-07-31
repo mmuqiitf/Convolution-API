@@ -58,23 +58,23 @@ def high_pass(request):
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     if(request.data['type'] == "Kernel 1"):
-        kernel = np.array([[-1, -1, -1], [-1, 8, -1], [-1, -1, -1]])
+        kernel = np.array([[-1, -1, -1], [-1, 8, 1], [-1, -1, -1]])
     elif(request.data['type'] == "Kernel 2"):
         kernel = np.array([[-1, -1, -1], [-1, 9, -1], [-1, -1, -1]])
     elif(request.data['type'] == "Kernel 3"):
-        kernel = np.array([[0, -1, 0], [-1, 8, -1], [0, -1, 0]])
+        kernel = np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]])
     elif(request.data['type'] == "Kernel 4"):
         kernel = np.array([[1, -2, 1], [-2, 5, -2], [1, -2, 1]])
     elif(request.data['type'] == "Kernel 5"):
-        kernel = np.array([[1, -2, 1], [-2, 4, -2], [1, -2, 1]])
+        kernel = np.array([[1, -2, 2], [-2, 4, -2], [1, -2, 1]])
     elif(request.data['type'] == "Kernel 6"):
-        kernel = np.array([[0, 1, 0], [1, -4, 1], [0, 1, 0]])
+        kernel = np.array([[0, 1, 0], [1, -4, 1], [0, 2, 0]])
     elif(request.data['type'] == "Laplace"):
-        kernel = (1.0 / 16) * np.array(
+        kernel =  np.array(
             [
                 [0, 0, -1, 0, 0],
                 [0, -1, -2, -1, 0],
-                [-1, -2, 16, -2, -1],
+                [-1, -2, 17, -2, -1],
                 [0, -1, -2, -1, 0],
                 [0, 0, -1, 0, 0],
             ]
