@@ -64,11 +64,11 @@ def high_pass(request):
     elif(request.data['type'] == "Kernel 3"):
         kernel = np.array([[1, -2, 1], [-2, 5, -2], [1, -2, 1]])
     elif(request.data['type'] == "Laplace"):
-        kernel = (1.0 / 16) * np.array(
+        kernel = np.array(
             [
                 [0, 0, -1, 0, 0],
                 [0, -1, -2, -1, 0],
-                [-1, -2, 16, -2, -1],
+                [-1, -2, 17, -2, -1],
                 [0, -1, -2, -1, 0],
                 [0, 0, -1, 0, 0],
             ]
