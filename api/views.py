@@ -28,7 +28,11 @@ def decode_base64(data, altchars=b'+/'):
 
 
 def main(request):
-    return HttpResponse("Hello!")
+    return HttpResponse("Hello World!")
+
+
+def test(request):
+    return HttpResponse("This is testing!")
 
 
 @api_view(['GET', 'POST'])
